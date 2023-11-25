@@ -1,0 +1,119 @@
+@import "../../scss/abstract/variables";
+
+.toast {
+    position: fixed;
+    top: 2em;
+    right: -100%;
+    max-width: 250px;
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    border-radius: 5px;
+    box-shadow: $smoke 0px 3px 8px;
+    transition: .3s;
+    background: $dark;
+    padding: 1rem 3rem 1rem 1rem;
+    line-height: 1.1rem;
+
+    &-success {
+        &::before {
+            background: $green;
+        }
+    }
+
+    &-error {
+        &::before {
+            background: $light-red;
+        }
+    }
+
+    &-success,
+    &-error {
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 5px;
+            width: 100%;
+        }
+        
+        .close {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            cursor: pointer;
+    
+            &-btn {
+                font-size: .8rem;
+                transition: .5s;
+                color: $green;
+    
+                &:hover {
+                    color: $turquoise;
+                }
+
+                &.error {
+                    color: $light-red;
+
+                    &:hover {
+                        color: $blood;
+                    }
+                }
+            }
+        }
+    
+        .content {
+            display: flex;
+            align-items: center;
+    
+            &-icon {
+                color: $green;
+                font-size: 1.25rem;
+
+                &.error {
+                    color: $light-red;
+                }
+            }
+    
+            &-msg {
+                margin-left: .75rem;
+            }
+        }
+
+        &.active {
+            animation: fade 6s linear;
+            animation-play-state: running;
+    
+            &::before {
+                animation: loading 8s linear;
+                animation-play-state: running;
+            }
+    
+            &:hover {
+                animation-play-state: paused;
+    
+                &::before {
+                    animation-play-state: paused;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fade {
+    0% { right: -100%; }
+    5% { right: 3em; }
+    10% { right: 2rem }
+    90% { right: 2em; }
+    95% { right: 3em; }
+    100% { right: -100%; }
+}
+
+@keyframes loading {
+    0% { width: 100%; }
+    5% { width: 100%; }
+    70% { width: 0; }
+    100% { width: 0; }
+}

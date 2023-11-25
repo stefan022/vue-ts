@@ -1,0 +1,13 @@
+@import "../../scss/abstract/variables";
+
+.error {
+    display: flex;
+    align-items: center;
+    margin-top: .25rem;
+    gap: .3rem;
+
+    &-icon,
+    &-msg {
+        color: $light-red;
+    }
+}

@@ -1,0 +1,13 @@
+@import "../../../scss/abstract/variables";
+
+.dg-btn {
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.google-icon {
+    color: $dark-gray;
+    font-size: 1rem;
+}
