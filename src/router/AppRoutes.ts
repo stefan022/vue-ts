@@ -23,6 +23,10 @@ export const AppRoutes = {
         path: "/register",
         name: "register"
     },
+    DASHBOARD: {
+        path: "/dashboard",
+        name: "/dashboard"
+    },
     NOT_FOUND: {
         path: "/:pathName(.*)",
         name: "not-found"

@@ -15,7 +15,7 @@
 
 <template>
     <div>
-        <slot></slot>
+        <RouterView></RouterView>
     </div>
 </template>
 

@@ -3,6 +3,7 @@ import PublicLayout from "@/layouts/public/PublicLayout.vue";
 
 import { Home, About, NotFound, NotAuthorized } from "@/views";
 import { AppRoutes } from "./AppRoutes";
+import { AdminLayout } from "@/layouts";
 
 export const routes =  [
     {
@@ -29,6 +30,11 @@ export const routes =  [
                 name: AppRoutes.SINGLE_PRODUCT.name,
                 component: () => import("@/views/Products/SingleProduct/SingleProduct.vue"),
             },
+            {
+                path: AppRoutes.DASHBOARD.path,
+                name: AppRoutes.DASHBOARD.name,
+                component: () => import("@/views/Dashboard/Dashboard.vue")
+            }
         ],
     },
     {
@@ -44,6 +50,17 @@ export const routes =  [
                 path: AppRoutes.REGISTER.path,
                 name: AppRoutes.REGISTER.name,
                 component: () => import("@/views/Register/Register.vue")
+            }
+        ]
+    },
+    {
+        path: "/",
+        component: AdminLayout,
+        children: [
+            {
+                path: AppRoutes.DASHBOARD.path,
+                name: AppRoutes.DASHBOARD.name,
+                component: () => import("@/views/Dashboard/Dashboard.vue")
             }
         ]
     },

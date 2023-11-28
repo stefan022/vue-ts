@@ -1,1 +1,1 @@
-export  const currentDate = new Date().getTime();
+export const currentDate = new Date().getTime();
