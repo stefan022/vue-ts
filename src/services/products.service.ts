@@ -17,7 +17,7 @@ const httpAddSingleProduct = (dto: AddSingleProductDTO): Promise<IResponse<IAddS
 };
 
 const httpUpdateSingleProduct = (id: number, dto: IProduct): Promise<IResponse<IProduct>> => {
-    return httpClient.put(`/phones/${id}`, dto);
+    return httpClient.patch(`/phones/${id}`, dto);
 };
 
 const httpDeleteSingleProduct = (id: number): Promise<IResponse<void>> => {
