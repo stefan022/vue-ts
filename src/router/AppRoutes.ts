@@ -23,6 +23,10 @@ export const AppRoutes = {
         path: "/register",
         name: "register"
     },
+    FORGOT_PASSWORD: {
+        path: "/forgot-password",
+        name: "/forgot-password"
+    },
     DASHBOARD: {
         path: "/dashboard",
         name: "/dashboard"

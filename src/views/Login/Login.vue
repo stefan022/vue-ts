@@ -72,6 +72,9 @@
             >
             </i>
         </div>
+        <div class="forgot-password">
+            <RouterLink :to="AppRoutes.FORGOT_PASSWORD.path">Forgot Password?</RouterLink>
+        </div>
         <button type="submit" class="dg-btn">Sign In</button>
         <div class="question">
             Don't have an account?

@@ -50,6 +50,11 @@ export const routes =  [
                 path: AppRoutes.REGISTER.path,
                 name: AppRoutes.REGISTER.name,
                 component: () => import("@/views/Register/Register.vue")
+            },
+            {
+                path: AppRoutes.FORGOT_PASSWORD.path,
+                name: AppRoutes.FORGOT_PASSWORD.name,
+                component: () => import("@/views/ForgotPassword/ForgotPassword.vue")
             }
         ]
     },
